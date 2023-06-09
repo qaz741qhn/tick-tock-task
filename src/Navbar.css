@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background: #47c093;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  cursor: pointer;
+  font-family: 'Bungee', cursive;
+  font-size: 1em;
+}
+
+button:hover {
+  background: #333;
+}

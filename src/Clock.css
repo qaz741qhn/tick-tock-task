@@ -1,15 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
+
 .clock {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 5em;
+  padding: 15vh 0;
+  align-items: center;
   color: #333;
-  font-family: 'Pop', sans-serif;
 }
 
 .clock h2 {
-  font-size: 2em;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 8em;
   margin: 0.5em;
 }
 
 .clock h3 {
-  font-size: 1.5em;
+  font-family: 'Bungee', cursive;
+  font-size: 10em;
   margin: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .clock {
+    padding: 25vh 0;
+    line-height: 3em;
+  }
+  .clock h2 {
+    font-size: 4em;
+  }
+  .clock h3 {
+    font-size: 4.5em;
+  }
 }

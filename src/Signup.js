@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Form from './components/Form';
 import Input from './components/Input';
-import "./Signup.css";
+import './SignupLogin.css';
 
-function Signup() {
+function Signup({apiURL}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ function Signup() {
   function handleEmailSignup(event) {
     event.preventDefault();
 
-    fetch("http://localhost:3000/users", {
+    fetch(`${apiURL}/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ function Signup() {
   }
 
   return (
-    <div className="signup">
+    <div className="signup-login">
       <h1>Sign Up</h1>
 
       <Form onSubmit={handleEmailSignup}>
