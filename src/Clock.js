@@ -23,7 +23,7 @@ function Clock() {
   return (
     <div className="clock">
       <h2>{date.toLocaleDateString()}</h2>
-      <h3>{`${hours}:${minutes}:${seconds}`}</h3>
+      <h3>{`${hours} : ${minutes} : ${seconds}`}</h3>
     </div>
   );
 }

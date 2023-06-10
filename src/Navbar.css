@@ -14,13 +14,14 @@ button {
   border-radius: 5px;
   color: white;
   padding: 10px;
-  margin: 10px;
-  width: 100px;
+  margin: 20px;
+  width: 120px;
   cursor: pointer;
   font-family: 'Bungee', cursive;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 button:hover {
   background: #333;
+  color: #47c093;
 }

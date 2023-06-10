@@ -26,6 +26,7 @@ function Login({apiURL}) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('user')}`
       },
       body: JSON.stringify({
         user: {

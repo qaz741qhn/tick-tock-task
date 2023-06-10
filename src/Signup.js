@@ -22,11 +22,6 @@ function Signup({apiURL}) {
     }
   }
 
-  // function handleGoogleSignup(event) {
-  //   event.preventDefault();
-  //   window.location.href = "http://localhost:3000/users/auth/google_oauth2";
-  // }
-
   function handleEmailSignup(event) {
     event.preventDefault();
 
@@ -34,6 +29,7 @@ function Signup({apiURL}) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('user')}`
       },
       body: JSON.stringify({
         user: {

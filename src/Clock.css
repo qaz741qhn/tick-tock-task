@@ -4,8 +4,8 @@
 .clock {
   display: flex;
   flex-direction: column;
-  line-height: 5em;
-  padding: 15vh 0;
+  line-height: 3em;
+  padding: 10vh 0;
   align-items: center;
   color: #333;
 }
@@ -20,6 +20,7 @@
   font-family: 'Bungee', cursive;
   font-size: 10em;
   margin: 0.5em;
+  line-height: 1em;
 }
 
 @media (max-width: 768px) {

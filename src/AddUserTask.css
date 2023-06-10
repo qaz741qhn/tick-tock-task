@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Bungee', cursive;
+}
+
+form input, form textarea {
+  margin: 10px;
+  padding-left: 5px;
+  width: 300px;
+  height: 50px;
+  font-family: 'Bungee', cursive;
+  border-color: #333;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 2em;
+  resize: none;
+}
+
+form textarea {
+  padding-top: 1em;
+}
+
+.date-time {
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  width: 50vw;
+  font-family: 'Bungee', cursive;
+}
+
+.detail-area {
+  height: 200px;
+}
+
+.statuses {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 20px; */
+  padding-right: 10px;
+  gap: 1em;
+}
+
+.status {
+  width: 70px;
+  height: 26px;
+  background: #333;
+  margin: 40px auto;
+  padding-right: 10px;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.status input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.status input[type="checkbox"]:checked + label {
+  left: 43px;
+}
+
+.status label {
+  display: block;
+  width: 34px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: #fcfff4;
+  background: linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+}
+
+.status .status-label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 40px;
+  left: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.add-button {
+  border: 2px solid #333;
+  color: #333
+}
