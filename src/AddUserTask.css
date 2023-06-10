@@ -17,7 +17,7 @@ form input, form textarea {
   border-color: #333;
   border-width: 3px;
   border-style: solid;
-  border-radius: 2em;
+  border-radius: 5px;
   resize: none;
 }
 
@@ -44,50 +44,60 @@ form textarea {
 .statuses {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 20px; */
   padding-right: 10px;
   gap: 1em;
+  margin-top: -5em;
 }
 
 .status {
-  width: 70px;
-  height: 26px;
-  background: #333;
+  width: 100px;
+  height: 52px;
   margin: 40px auto;
-  padding-right: 10px;
   position: relative;
+}
+
+.status label {
+  width: 100%;
+  background: #333;
+  height: 100%;
+  display: inline-block;
   border-radius: 50px;
-  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+  position: relative;
+  transition: all .3s ease;
+  transform-origin: 20% center;
+  cursor: pointer;
+}
+
+.status label:before {
+  content: "";
+  display: block;
+  transition: all .2s ease;
+  width: 2.3em;
+  height: 2.3em;
+  top: .35em;
+  left: .35em;
+  border-radius: 2em;
+  border: 2px solid #47c093;
+  position: absolute;
+  transition: .3s ease;
+}
+
+.status input[type="checkbox"]:checked + label:before {
+  background-color: #47c093;
 }
 
 .status input[type="checkbox"] {
   visibility: hidden;
 }
 
-.status input[type="checkbox"]:checked + label {
-  left: 43px;
-}
-
-.status label {
-  display: block;
-  width: 34px;
-  height: 20px;
-  cursor: pointer;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  background: #fcfff4;
-  background: linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-  border-radius: 50px;
-  transition: all 0.4s ease;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+.status input[type="checkbox"]:checked + label:before {
+  left: calc(100% - 2.85em);
 }
 
 .status .status-label {
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 40px;
   left: 0;
   color: #333;
   font-size: 14px;
@@ -95,5 +105,5 @@ form textarea {
 
 .add-button {
   border: 2px solid #333;
-  color: #333
+  color: #333;
 }

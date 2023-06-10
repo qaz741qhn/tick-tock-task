@@ -41,7 +41,7 @@ function AddUserTask({ onAdd }) {
           />
           <div className="statuses">
             {statuses.map((state, index) => (
-              <div className="status" key={index}>
+              <div className={`status ${state}`} key={index}>
                 <input
                   type="checkbox"
                   id={state}
@@ -73,7 +73,7 @@ function AddUserTask({ onAdd }) {
         </div>
       </div>
       <button className="add-button" type="submit">
-        Add Task
+        Submit!!!
       </button>
     </form>
   );
