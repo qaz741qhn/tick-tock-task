@@ -7,38 +7,56 @@ function AddUserTask({ onAdd }) {
   const [status, setStatus] = useState("");
   const [fromDateTime, setFromDateTime] = useState("");
   const [toDateTime, setToDateTime] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const statuses = ["unfinished", "finished", "in process"];
+  const statuses = ["unfinished", "finished", "in progress"];
+  
+  const dateTimeStates = [
+    { state: fromDateTime, setState: setFromDateTime, placeholder: "From" },
+    { state: toDateTime, setState: setToDateTime, placeholder: "To" },
+  ];
+
+  const handleDateTimeChange = (setState, value) => {
+    setState(value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const fromDate = new Date(fromDateTime);
+    const toDate = new Date(toDateTime);
+
+    if (fromDate >= toDate) {
+      setErrorMessage("Start date and time must be earlier than end date and time.");
+      return;
+    }
+
     onAdd({ title, detail, status, fromDateTime, toDateTime });
     setTitle("");
     setDetail("");
     setStatus("");
     setFromDateTime("");
     setToDateTime("");
+    setErrorMessage("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>Add Task</h1>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <div className="container">
         <div className="date-time">
-          From:
-          <input
-            type="datetime-local"
-            value={fromDateTime}
-            onChange={(e) => setFromDateTime(e.target.value)}
-            placeholder="From"
-          />
-          To:
-          <input
-            type="datetime-local"
-            value={toDateTime}
-            onChange={(e) => setToDateTime(e.target.value)}
-            placeholder="To"
-          />
+          {dateTimeStates.map((item, index) => (
+            <div key={index}>
+              {item.placeholder}:
+              <input
+                type="datetime-local"
+                value={item.state}
+                onChange={(e) => handleDateTimeChange(item.setState, e.target.value)}
+                placeholder={item.placeholder}
+              />
+            </div>
+          ))}
           <div className="statuses">
             {statuses.map((state, index) => (
               <div className={`status ${state}`} key={index}>

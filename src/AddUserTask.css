@@ -107,3 +107,9 @@ form textarea {
   border: 2px solid #333;
   color: #333;
 }
+
+.error-message {
+  color: orange;
+  font-size: 1.2em;
+  -webkit-text-stroke: 1.4px #333;
+}
