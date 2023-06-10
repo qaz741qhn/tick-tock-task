@@ -1,7 +1,21 @@
-// AddTaskPage.js
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AddUserTask from "./AddUserTask";
+
+function requireAuth(WrappedComponent, apiURL) {
+  return function(props) {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      const token = localStorage.getItem('user');
+      if (!token) {
+        navigate("/login");
+      }
+    }, [navigate]);
+
+    return <WrappedComponent {...props} apiURL={apiURL} />;
+  }
+}
 
 function AddTaskPage({ apiURL }) {
   const navigate = useNavigate();
@@ -45,4 +59,4 @@ function AddTaskPage({ apiURL }) {
   );
 }
 
-export default AddTaskPage;
+export default requireAuth(AddTaskPage, "https://multi-api.herokuapp.com");

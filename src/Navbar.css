@@ -1,6 +1,8 @@
 nav {
   display: flex;
   justify-content: flex-end;
+  border-bottom: thick double #333;
+  margin-bottom: 5em;
 }
 
 .button-container {
@@ -20,7 +22,14 @@ button {
   font-size: 1.5em;
 }
 
+nav button {
+  -webkit-text-stroke: 1.8px #333;
+  color: #47c093;
+}
+
 button:hover {
   background: #333;
   color: #47c093;
+  -webkit-text-stroke: 0px;
+  font-size: 1.6em;
 }

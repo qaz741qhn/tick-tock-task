@@ -17,8 +17,8 @@ function UserTaskList({ tasks, onDelete, onUpdate }) {
         ))
       ) : (
         <div className="no-task">
-          <h3>No tasks to show...</h3>
-          <button onClick={() => navigate("/add_task")}>Add Task</button>
+          <h3>Nothing to show...</h3>
+          <button onClick={() => navigate("/add_task")}>Add something!</button>
         </div>
       )}
     </div>
